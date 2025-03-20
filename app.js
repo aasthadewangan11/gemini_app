@@ -25,6 +25,11 @@ app.post('/getResponse', (req, res) => {
       });
     });
 });
+app.use('*', (req, res) => {
+  res.status(404).json({
+      msg: 'bad request'
+  });
+});
 
 // app.get('/abc',(req,res)=>{
 //     console.log('hi')
