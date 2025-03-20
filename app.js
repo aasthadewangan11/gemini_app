@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+const cors = require('cors');
 
 app.use(bodyParser.json());
-
+app.use(cors());
 app.post('/getResponse', (req, res) => {
   console.log(req.body.question);
   const genAI = new GoogleGenerativeAI("AIzaSyALoJ_Uu8knzZejG10XJV1Ax78RQQ4X568");
