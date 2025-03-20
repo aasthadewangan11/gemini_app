@@ -25,7 +25,7 @@ app.post('/getResponse', (req, res) => {
       });
     });
 });
-app.use('*', (req, res) => {
+app.get('*', (req, res) => {
   res.status(404).json({
       msg: 'bad request'
   });
